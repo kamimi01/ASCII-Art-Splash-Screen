@@ -1,26 +1,34 @@
-![Example Photo](example.png)
 # ASCII Art Splash Screen
-Automatically presents ASCII art to you when you open terminal and changes "Randomly"
 
-## How to get this working
+ターミナルにログインする度に、ASCII Artをランダムに出力します
 
+![Example Photo](example.png)
 
-This tutorial is for unix based systems #Sorry Windows. Also if you need this tutorial you probably shouldn't be using terminal.
+## 前提
 
- 1. Download the `ascii.py` file and install it at your home directory. 
- 2. Open Terminal 
- 3. Type `cd` to ensure you're at the home directory
- 4. Type `nano .bash_profile`
- 5. Use arrow keys to add at the bottom `python3 ascii.py`
- 6. Exit nano by pressing `Ctrl + x` then `y` then `<Enter Key>`
- 7. Restart Terminal
- 
- ## Support
- This repo is not being supported anymore as all of the functionality desired has been implemented. 
+* MacOSでのみ動きます
+* 事前にASCII Artのファイルを準備してください
+  * [ansize](https://github.com/jasonmoo/ansize)を使用すると、好きな画像をASCII Artのファイルに変換できます
+  * `txt`ファイルと`ascii`ファイルで動作確認済みです
 
+## 使い方
 
-[Vim Tutorial](http://www.openvim.com)
+1. `ascii.py`をダウンロードする。（レポジトリをクローンすると早いですが、このファイルだけでも問題ないです。）
+2. ターミナルを開く
+3. `ascii.py`をホームディレクトリ`~/.`に配置する
+4. `settings.py`を作成して以下の通り記載する
+   ```python
+   artFileDir = "<ASCII Artのファイルを配置したディレクトリの絶対パス>"
+   ```
+5. `settings.py`をホームディレクトリ`~/.`に配置する
+6. `.bash_profile`または`.bashrc`を開き、以下の通り記載する
+   ```bash
+   python3 -B ascii.py
+   ```
+   * 注意
+     * デフォルトのシェルが`zsh`の場合はそちらに読み替えてください
+     * `-B`は`__pycache__`ファイルを作成しないようにする（キャッシュ作成を行わない）ためのオプションです
+7. `source ~/.bash_profile`または`source ~/.bashrc`コマンドを実行する
 
-
-
-Created by Dan Richards 2017. 
+## 参考
+* このレポジトリは、[ASCII-Art-Splash-Screen](https://github.com/DanCRichards/ASCII-Art-Splash-Screen)をフォークしています

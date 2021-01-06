@@ -1,14 +1,18 @@
 import random
 import os
+import settings
 
-# txtファイルを格納しているGitレポジトリのディレクトリ
-gitRepositoryDir = "https://raw.githubusercontent.com/kamimi01/ASCII-Art-Splash-Screen/master/art/"
-numOfFiles = 1
+# txtファイルを格納しているローカルのディレクトリを取得
+artFileDir = settings.artFileDir
 txtExtention = ".txt"
 
-# ランダムにファイルを取得する
-i = random.randrange(numOfFiles) + 1 
-website = gitRepositoryDir + str(i) + txtExtention
+# ディレクトリのファイル数を取得
+files = os.listdir(artFileDir)
+numOfFiles = len(files)
 
-# curlコマンド実行
-os.system("curl " +  website)
+# ランダムにファイルを取得する
+i = random.randrange(numOfFiles) + 1
+fileName = artFileDir + str(i) + txtExtention
+
+# catコマンド実行
+os.system("cat " + fileName)

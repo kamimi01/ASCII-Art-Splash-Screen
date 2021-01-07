@@ -4,16 +4,24 @@ import settings
 
 # txtファイルを格納しているローカルのディレクトリを取得
 artFileDir = settings.artFileDir
-txtExtention = ".txt"
 
-# ディレクトリのファイル数を取得
+# 使用可能なASCII Artのファイル拡張子
+extList = [".txt", ".ascii"]
+
+# ASCII Artとして出力するファイルを取得
 files = os.listdir(artFileDir)
-numOfFiles = len(files) - 1
-print(numOfFiles)
+correctFiles = []
+
+for file in os.listdir(artFileDir):
+  base, ext = os.path.splitext(file)
+  if ext in extList:
+    correctFiles.append(file)
+
+numOfFiles = len(correctFiles)
 
 # ランダムにファイルを取得する
-i = random.randrange(numOfFiles) + 1
-fileName = artFileDir + str(i) + txtExtention
+randomIndex = random.randrange(numOfFiles)
+fileName = artFileDir + correctFiles[randomIndex]
 
 # catコマンド実行
 os.system("cat " + fileName)

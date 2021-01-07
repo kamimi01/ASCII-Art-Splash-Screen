@@ -1,7 +1,7 @@
 # Re-ASCII-Art-Splash-Screen-Ja
 
-ターミナルにログインする度に、ASCII Artをランダムに出力します
-このリポジトリは、[ASCII-Art-Splash-Screen](https://github.com/DanCRichards/ASCII-Art-Splash-Screen)をフォークしています
+* ターミナルにログインする度に、ASCII Artをランダムに出力します
+* このリポジトリは、[ASCII-Art-Splash-Screen](https://github.com/DanCRichards/ASCII-Art-Splash-Screen)をフォークしています
 
 ![Example Photo](example.png)
 

@@ -7,7 +7,7 @@
 
 ## 前提
 
-* MacOSでのみ動きます
+* MacOSでのみ動作確認済みです
 * 事前にASCII Artのファイルを準備してください
   * [ansize](https://github.com/jasonmoo/ansize)を使用すると、好きな画像をASCII Artのファイルに変換できます
   * `txt`ファイルと`ascii`ファイルで動作確認済みです

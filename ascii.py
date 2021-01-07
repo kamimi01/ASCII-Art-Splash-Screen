@@ -8,7 +8,8 @@ txtExtention = ".txt"
 
 # ディレクトリのファイル数を取得
 files = os.listdir(artFileDir)
-numOfFiles = len(files)
+numOfFiles = len(files) - 1
+print(numOfFiles)
 
 # ランダムにファイルを取得する
 i = random.randrange(numOfFiles) + 1
